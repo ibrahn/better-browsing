@@ -1,0 +1,25 @@
+/* ==UserStyle==
+@name           twitter-mobile-no-login
+@namespace      github.com/ibrahn/better-browsing
+@version        0.0.1
+@description    Hide the fullscreen login and app nagging on twitter mobile site
+@author         Ibrahn Sahir (https://github.com/ibrahn)
+@homepageURL    https://github.com/ibrahn/better-browsing
+@updateURL      https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-mobile-no-login.user.css
+@license        CC0
+==/UserStyle== */
+
+@-moz-document domain("mobile.twitter.com") {
+    /* prevent fullscreen nag from disabling scroll */
+    body[style] {
+        overflow-y: scroll !important;
+    }
+    /* hide fullscreen nagging */
+    #react-root > div:nth-child(1) > div:nth-child(1) > div:nth-child(1).r-1d2f490.r-u8s1d.r-zchlnj.r-ipm5af.r-184en5c {
+        display: none;
+    }
+    /* don't need search or login */
+    header.css-1dbjc4n {
+        display: none;
+    }
+}
