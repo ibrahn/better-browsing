@@ -1,15 +1,17 @@
 /* ==UserStyle==
 @name           twitter-mobile-no-login
 @namespace      github.com/ibrahn/better-browsing
-@version        0.0.2
-@description    Hide the fullscreen login and app nagging on twitter mobile site
+@version        0.0.3
+@description    Twitter for people who don't log in. Hides irrelevant interface.
 @author         Ibrahn Sahir (https://github.com/ibrahn)
 @homepageURL    https://github.com/ibrahn/better-browsing
 @updateURL      https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-mobile-no-login.user.css
 @license        CC0
 @preprocessor   stylus
-@var    checkbox    showTrending   "Show Trending"     0
-@var    checkbox    showPostStats  "Show Post Stats"   0
+@var    checkbox    showPostStats   "Show Post Stats"   0
+@var    checkbox    showSidebar     "Show Sidebar"      0
+@var    checkbox    showTrending    "Show Trending"     0
+@var    range       feedWidth       "Feed Width"        [600, 400, 1920, 20, "px"]
 ==/UserStyle== */
 
 @-moz-document domain("mobile.twitter.com") {
@@ -29,18 +31,41 @@
     }
 
     /* hide login related things */
-    div.r-14lw9ot:nth-child(1).css-1dbjc4n.r-14lw9ot.r-15d164r,                     /* side box */
     div.css-1dbjc4n.r-obd0qt.r-18u37iz.r-1w6e6rj.r-1h0z5md.r-dnmrzs,                /* follow buttons */
     div.css-1dbjc4n.r-k200y.r-1n0xq6e,                                              /* follow buttons */
-    div.css-18t94o4.css-1dbjc4n.r-1777fci.r-11cpok1.r-1ny4l3l.r-bztko3.r-lrvibr,     /* post interact drop down */
-    div.r-tzz3ar > div.r-1guxwsk:nth-child(n+3) /* the media and likes tabs */
+    div.r-1777fci.r-11cpok1.r-1ny4l3l.r-bztko3.r-lrvibr[data-testid="caret"],       /* post interact drop down */
+    div.r-tzz3ar > div.r-1guxwsk:nth-child(n+3)                                     /* the media and likes tabs */
     {
         display: none;
     }
 
-    unless showTrending {
-        /* hide trending side box */
-        div.r-14lw9ot:nth-child(4).css-1dbjc4n.r-14lw9ot.r-15d164r
+    /* fixup the tab sizing we just broke by hiding the media and likes tabs */
+    div.r-hbs49y,               /* the bar */
+    div.r-hbs49y > div > div    /* the tabs */
+    {
+        flex-grow: 1;
+    }
+    div.r-u8s1d:nth-child(3)    /* hide the "next" arrow */
+    {
+        display: none;
+    }
+
+    if showSidebar {
+        /* hide login module */
+        div.r-14lw9ot:nth-child(1).css-1dbjc4n.r-14lw9ot.r-15d164r
+        {
+            display: none;
+        }
+
+        unless showTrending {
+            /* hide trending module */
+            div.r-14lw9ot:nth-last-child(2).css-1dbjc4n.r-14lw9ot.r-15d164r
+            {
+                display: none;
+            }
+        }
+    } else {
+        div.css-1dbjc4n.r-aqfbo4.r-1joea0r.r-zso239.r-1udh08x.r-1ovo9ad[data-testid="sidebarColumn"]
         {
             display: none;
         }
@@ -53,5 +78,15 @@
         {
             display: none;
         }
+    }
+
+    /* custom feed column width */
+    div.r-1ye8kvj
+    {
+        max-width: feedWidth;
+    }
+    div.r-rthrr5
+    {
+        width: max(990px, feedWidth);
     }
 }
