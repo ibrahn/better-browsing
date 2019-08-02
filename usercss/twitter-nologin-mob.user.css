@@ -1,11 +1,11 @@
 /* ==UserStyle==
-@name           twitter-mobile-no-login
+@name           twitter-nologin-mob
 @namespace      github.com/ibrahn/better-browsing
 @version        0.0.3
 @description    Twitter for people who don't log in. Hides irrelevant interface.
 @author         Ibrahn Sahir (https://github.com/ibrahn)
 @homepageURL    https://github.com/ibrahn/better-browsing
-@updateURL      https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-mobile-no-login.user.css
+@updateURL      https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-nologin-mob.user.css
 @license        CC0
 @preprocessor   stylus
 @var    checkbox    showPostStats   "Show Post Stats"   0
