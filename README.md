@@ -20,5 +20,9 @@ A friendlier Twitter mobile for people who aren't logged in.
 Hides a lot of noisy interface you can't really use.  
 Also hides the nagging fullscreen popups about downloading the app or logging in.
 
+### [twitter-dark-mob](usercss/twitter-dark-mob.user.css)
+* [install](https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-dark-mob.user.css)  
+A very basic dark theme for mobile.twitter.com.
+
 ## License
 [CC0](LICENSE)

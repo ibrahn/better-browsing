@@ -1,0 +1,56 @@
+/* ==UserStyle==
+@name           twitter-dark-mob
+@namespace      github.com/ibrahn/better-browsing
+@version        0.0.1
+@description    A dark theme for mobile.twitter.com
+@author         Ibrahn Sahir (https://github.com/ibrahn)
+@homepageURL    https://github.com/ibrahn/better-browsing
+@updateURL      https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-dark-mob.user.css
+@license        CC0
+@preprocessor   stylus
+
+@var    color   backgroundColor     "Background Color"  #101010
+@var    color   textColor           "Text Color"        darkgrey
+==/UserStyle== */
+@-moz-document domain("mobile.twitter.com") {
+
+    lightBackgroundColor = lighten(backgroundColor, 8%);
+
+    body,
+    div.r-e84r5y,   /* backdrop */
+    div.r-vrwoeq    /* profile top bg */
+    {
+        background-color: backgroundColor !important;
+    }
+
+    div.r-1re7ezh,  /* twitter handle in post */
+    div.r-hkyrab,   /* post text */
+    .r-1re7ezh      /* post time */
+    {
+        color: textColor;
+    }
+
+    /* columns */
+    div.r-14lw9ot
+    {
+        background-color: lightBackgroundColor;
+    }
+
+    /* mouseover highlight */
+    div.r-1u4rsef
+    {
+        background-color: lighten(lightBackgroundColor, 8%);
+    }
+
+    /* click highlight */
+    div.r-vqp9x9
+    {
+        background-color: lighten(lightBackgroundColor, 12%);
+    }
+
+    div.r-my5ep6,   /* post border */
+    nav.r-my5ep6    /* tab border */
+    {
+        border-bottom-color: textColor;
+    }
+}
