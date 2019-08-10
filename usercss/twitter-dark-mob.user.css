@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           twitter-dark-mob
 @namespace      github.com/ibrahn/better-browsing
-@version        0.0.1
+@version        0.0.2
 @description    A dark theme for mobile.twitter.com
 @author         Ibrahn Sahir (https://github.com/ibrahn)
 @homepageURL    https://github.com/ibrahn/better-browsing
@@ -37,12 +37,14 @@
     }
 
     /* mouseover highlight */
+    article.r-1u4rsef,
     div.r-1u4rsef
     {
         background-color: lighten(lightBackgroundColor, 8%);
     }
 
     /* click highlight */
+    article.r-vqp9x9,
     div.r-vqp9x9
     {
         background-color: lighten(lightBackgroundColor, 12%);
