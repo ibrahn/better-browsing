@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           twitter-nologin-mob
 @namespace      github.com/ibrahn/better-browsing
-@version        0.0.4
+@version        0.0.5
 @description    Twitter for people who don't log in. Hides irrelevant interface.
 @author         Ibrahn Sahir (https://github.com/ibrahn)
 @homepageURL    https://github.com/ibrahn/better-browsing
@@ -51,21 +51,24 @@
     }
 
     if showSidebar {
-        /* hide login module */
-        div.r-14lw9ot:nth-child(1).css-1dbjc4n.r-14lw9ot.r-15d164r
+        div.css-1dbjc4n.r-aqfbo4.r-1joea0r.r-zso239[data-testid="sidebarColumn"]
         {
-            display: none;
-        }
-
-        unless showTrending {
-            /* hide trending module */
-            div.r-14lw9ot:nth-last-child(2).css-1dbjc4n.r-14lw9ot.r-15d164r
+            /* hide login module */
+            div.r-ku1wi2:nth-child(1)
             {
                 display: none;
             }
+
+            unless showTrending {
+                /* hide trending module */
+                div.r-ku1wi2:nth-last-child(2)
+                {
+                    display: none;
+                }
+            }
         }
     } else {
-        div.css-1dbjc4n.r-aqfbo4.r-1joea0r.r-zso239.r-1ovo9ad[data-testid="sidebarColumn"]
+        div.css-1dbjc4n.r-aqfbo4.r-1joea0r.r-zso239[data-testid="sidebarColumn"]
         {
             display: none;
         }
