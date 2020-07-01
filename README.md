@@ -9,11 +9,6 @@ a browser addon for overriding webpage CSS using [UserCSS](https://github.com/op
 
 ## The Scripts
 
-### [reddit-noapp-mob](usercss/reddit-noapp-mob.user.css)
-* [install](https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/reddit-noapp-mob.user.css)  
-Reddit mobile doesn't seem to want to be a website any more and hassles you about the app in up to five places at once.  
-This should hide them all.
-
 ### [twitter-nologin-mob](usercss/twitter-nologin-mob.user.css)
 * [install](https://raw.githubusercontent.com/ibrahn/better-browsing/master/usercss/twitter-nologin-mob.user.css)  
 A friendlier Twitter mobile for people who aren't logged in.  
